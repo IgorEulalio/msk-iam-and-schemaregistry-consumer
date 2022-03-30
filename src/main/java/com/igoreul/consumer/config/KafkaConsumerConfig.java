@@ -39,13 +39,11 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, GlueSchemaRegistryKafkaDeserializer.class);
-
         props.put(AWSSchemaRegistryConstants.DATA_FORMAT, DataFormat.AVRO.name());
         props.put(AWSSchemaRegistryConstants.AWS_REGION, regionName);
-        props.put(AWSSchemaRegistryConstants.REGISTRY_NAME, "microservices-cluster-featurename-registry");
-        props.put(AWSSchemaRegistryConstants.SCHEMA_NAME, "users-schema");
+        props.put(AWSSchemaRegistryConstants.REGISTRY_NAME, "my-registry");
+        props.put(AWSSchemaRegistryConstants.SCHEMA_NAME, "my-schema");
         props.put(AWSSchemaRegistryConstants.AVRO_RECORD_TYPE, AvroRecordType.SPECIFIC_RECORD.getName());
         props.put("sasl.mechanism", "AWS_MSK_IAM");
         props.put("security.protocol", "SASL_SSL");
